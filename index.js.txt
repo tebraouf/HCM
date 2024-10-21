@@ -1,0 +1,33 @@
+   <script>
+        document.title = "Hadja chaba men";
+        function saveContact() {
+            // vCard data
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN: Hadja chaba men
+ORG:Hadja Chaba men;Prêt à Porter
+TEL:+213552121417
+EMAIL:hajachaba@example.com
+END:VCARD`;
+
+            // Create a Blob from the vCard data
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+
+            // Create a temporary anchor element to trigger the download
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'contact.vcf'; // File name
+            a.style.display = 'none';
+            document.body.appendChild(a);
+
+            // Trigger the download
+            a.click();
+
+            // Remove the temporary anchor element
+            document.body.removeChild(a);
+
+            // Revoke the object URL to free up memory
+            window.URL.revokeObjectURL(url);
+        }
+    </script>

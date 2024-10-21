@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-arp="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadja chaba men</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Hadja chaba men</title>
+    <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="logo.png">
+</head>
+
+<body>
+    <div class="contact-card">
+        <div class="header">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="info">
+            <h1>Hadja Chaba Men</h1>
+            <p>Vêtements Pour Homme</p>
+        </div>
+        <div class="save-contact">
+            <button onclick="saveContact()">Save Contact</button>
+        </div>
+        <div class="contact-methods">
+            <a href="https://www.tiktok.com/@hadjachabamen1?is_from_webapp=1&sender_device=pc" class="contact-button">
+                <img src="tiktok.png" alt="tiktok" ></a>
+            <a href="https://www.instagram.com/hadjachabamen" class="contact-button" target="_blank">
+                <img src="instagram.png" alt="Instagram" >           </a>
+            <a href="https://www.facebook.com/profile.php?id=100083133505082" class="contact-button" target="_blank">
+                <img src="facebook.png" alt="Facebook" >            </a>
+            <a href="https://wa.me/213552121417" class="contact-button" target="_blank">
+                    <img src="whatsapp.png" alt="WhatsApp" >           </a>
+            <a href="https://maps.app.goo.gl/x91vrwZdLqZC6sKn8" class="contact-button" target="_blank">
+                <img src="g_maps.png" alt="Maps" >            </a>
+        </div>
+    </div>
+
+    <script>
+        document.title = "Hadja chaba men";
+        function saveContact() {
+            // vCard data
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN: Hadja chaba men
+ORG:Hadja Chaba men;Prêt à Porter
+TEL:+213552121417
+EMAIL:hajachaba@example.com
+END:VCARD`;
+
+            // Create a Blob from the vCard data
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+
+            // Create a temporary anchor element to trigger the download
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'contact.vcf'; // File name
+            a.style.display = 'none';
+            document.body.appendChild(a);
+
+            // Trigger the download
+            a.click();
+
+            // Remove the temporary anchor element
+            document.body.removeChild(a);
+
+            // Revoke the object URL to free up memory
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+
+
+
+
+</body></html>

@@ -4,23 +4,28 @@
 }
 body, html {
     background-color: #f5f5f5;
+    height: 100%;
+    margin: 0;
+
     display: flex ;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    margin: 0 ;
+    
+
 }
 .contact-card {
     background-color: white;
      /*border: 1px solid #ccc; */ 
+
     border-radius: 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    padding: 20px 0px 20px 0px;
+    width: 100% ;
+    max-width: 300px;
+    padding: 20px 0px 20px 0px; 
     text-align: center;
     position: fixed;
-    /*width: 100% ;
-    max-width: 300px;*/
+    
+    
 }
 div {
     display: block;
@@ -145,10 +150,7 @@ a:-webkit-any-link {
     color: black;
     font-size: 16px;
 }
-body {
-    display: block;
-    margin: 8px;
-}
+
 head {
     display: none;
 }
